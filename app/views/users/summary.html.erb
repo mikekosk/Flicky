@@ -1,0 +1,19 @@
+
+<table class="table table-dark dark-bg">
+  <thead>
+    <tr>
+      <th><%= "Movie" %></th>
+      <th><%= "Score" %></th>
+      <th><%= "IMDB Rating" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ratings.each do |rating| %>
+      <tr>
+        <td><%= @movies[rating[0].to_i].title %></td>
+        <td><%= rating[1] %></td>
+        <td><%= @movies[rating[0].to_i].vote_average %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

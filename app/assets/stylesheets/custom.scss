@@ -1,0 +1,128 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* universal */
+
+body {
+  padding-top: 00px;
+  // background-color: #aa6fa7;
+  background: -webkit-gradient(linear, left top, right top, from(#7f9ecc), to(#aa6fa7));
+  background: -webkit-linear-gradient(left, #aa6fa7, #7f9ecc);
+  background: -moz-linear-gradient(left, #aa6fa7, #7f9ecc);
+  background: -ms-linear-gradient(left, #aa6fa7, #7f9ecc);
+  background: -o-linear-gradient(left, #aa6fa7, #7f9ecc);
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0,0,0,0.3);
+  img {
+    max-width:25%;
+  }
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* header */
+nav li{
+  color: #fff
+}
+
+.navbar .brand, .navbar .nav > li > a {
+    color: #fff;
+    font-weight: bold;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #aaa;
+  text-decoration: none;
+}
+
+/* show page */
+
+.flash-show-page {
+  background-color: rgba(0,0,0,0.6);
+  color: #F5F5F5;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  h3 {
+    color: #fff
+  }
+  h4 {
+    color: #ffff
+  }
+}
+
+.show-page {
+  background-color: rgba(0,0,0,0.7);
+  color: #F5F5F5;
+  padding-bottom: 40px;
+  padding-top: 20px;
+  h1 {
+    color: #fff
+  }
+  h4 {
+    color: #ffff
+  }
+}
+
+/* table */
+
+.dark-bg {
+  background-color: rgba(0,0,0,0.5);
+  color: #f5f5f5;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}

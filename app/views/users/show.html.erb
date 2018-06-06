@@ -1,0 +1,48 @@
+<% movie = @movie %>
+<% next_movie = params[:movie_id].to_i + 1 %>
+
+<% if params[:movie_id].to_i == 1 %>
+  <div class="container flash-show-page">
+    <div class="container">
+      <h4> <%= "Welcome Viewer #{params[:viewer_id]}!" %> </h4>
+      <p> Each viewer will rate the same 20 movies, and the most popular ones will
+        be displayed after eveyone is done.
+        Use the buttons below to rate each film.</p>
+
+    </div>
+  </div>
+<% end %>
+
+
+<div class="container show-page">
+  <div class="container">
+    <div class="col-md-4 offset-md-2">
+      <div><%= image_tag "http://image.tmdb.org/t/p/w300/#{movie.poster_path}" %></div>
+      <!-- <div><%= image_tag "http://image.tmdb.org/t/p/w92/#{movie.backdrop_path}" %></div> -->
+    </div>
+    <div class="col-md-6">
+      <h1><%= movie.title %></h1>
+      <h4><%= "IMDB Score: #{movie.vote_average}" %></h4>
+      <br>
+      <p><%= movie.overview %></p>
+      <br>
+      <p><%= "Release Date: #{movie.release_date}" %></p>
+      <p><%= movie.imdb_id %></p>
+      <br>
+      <br>
+      <br>
+
+      <%= link_to "Super-Like", params.permit(:movie_id, :viewer_id, :user_action)
+            .merge({:user_action => "up"}), class: "btn-success btn-lg btn-warning" %>
+      <%= link_to "No way!", params.permit(:movie_id, :viewer_id, :user_action)
+            .merge({:user_action => "left"}), class: "btn-success btn-lg btn-danger" %>
+      <%= link_to "Would Watch", params.permit(:movie_id, :viewer_id, :user_action)
+            .merge({:user_action => "right"}), class: "btn-success btn-lg btn-success" %>
+      <%= link_to "Seen it !", params.permit(:id, :movie_id, :viewer_id, :user_action)
+            .merge({:user_action => "down"}), data: { keybinding: 's' }, class: "btn-lg btn-primary"  %> <br>
+
+    </div>
+
+
+  </div>
+</div>
