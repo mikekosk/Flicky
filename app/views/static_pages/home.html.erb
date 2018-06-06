@@ -3,13 +3,16 @@
   <%= image_tag("FLICKY.png", alt: "Kitten") %>
 
   <h2>
-    Use a Tinder Style Interface to select a </br>
-    movie for your group of friends to watch.
+    Having Trouble Choosing a Movie to watch?
   </h2>
+  <h4>
+    Find group consensus by individually voting <br>
+     on a selection of top movies
+  </h4>
 
   <%= form_for(:session, url: start_path) do |f| %>
 
-    <%= f.label :viewers %>
+    <%= f.label :viewers %>:  
     <%= f.number_field(:viewers, in: 1..10) %>
 
     <div class="row nav-row">

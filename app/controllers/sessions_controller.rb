@@ -6,12 +6,12 @@ class SessionsController < ApplicationController
 
     # Select random movies
     category = rand(0..4)
-  	page = rand(1..5)
+  	page = rand(1..8)
 
   	if category == 0
   		list = Tmdb::Discover.movie(page: page)
   	elsif category == 1
-  		list = Tmdb::Movie.upcoming(page: page)
+  		list = Tmdb::Discover.movie(page: page)
   	elsif category == 2
   		list = Tmdb::Movie.now_playing(page: page)
   	elsif category == 3
@@ -24,6 +24,8 @@ class SessionsController < ApplicationController
     # Load movies into db
     user = User.new(movies: list["results"])
     user.save
+    user_id = user.id
+    puts user_id, "look"
 
     # Temporarily use user_id before I figure out why passing nulls
     #user = User.find(1)
